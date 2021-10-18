@@ -96,7 +96,7 @@
                         identificationType,
                     } = cardForm.getCardFormData();
 
-                    fetch("https://www.licompraentuhogar.com/api/pagar", {
+                    fetch("{{config('services.mercadopago.app_url')}}", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -107,7 +107,7 @@
                             payment_method_id,
                             transaction_amount: Number(amount),
                             installments: Number(installments),
-                            description: "CHARRICAS 280G",
+                            description: "Pago de prueba",
                             payer: {
                                 email,
                                 identification: {
